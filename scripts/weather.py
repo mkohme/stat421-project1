@@ -10,7 +10,7 @@ url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}&aqi=no"
 response = requests.get(url)
 data = response.json()
 
-print(data)  # helpful to verify the API works
+print(data)
 
 weather_data = {
     "city": data["location"]["name"],
@@ -25,3 +25,4 @@ df = pd.DataFrame([weather_data])
 df.to_csv("data/weather_data.csv", index=False)
 
 print(df)
+
